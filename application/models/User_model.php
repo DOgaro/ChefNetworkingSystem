@@ -66,7 +66,6 @@ public function getAllUsers(){
       $this->db->where('users.id', $id);
       return $this->db->delete('users');
     }
-
 }
 
 
