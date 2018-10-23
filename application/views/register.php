@@ -1,72 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Registration-CI Login Registration</title>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<title>Register Page</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title">
+	<link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://css.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://css.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body>
+	
+	<div class="col-lg-7 col-lg-offset-2">
+		<h1>Register Page</h1>
 
+        <p>Fill in the details to register on our website</p>
+        <?php if(isset($_SESSION['succes'])) { ?>
+             <div class="alert alert-success"> <?php echo $_SESSION['succes']; ?></div>
+        <?php
+        } ?>
+        <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+        <form action="" method="POST">
+	    
+		<div class="form-group">
+			<label for="username">Username:</label>
+			<input class="form-control" name="username" id="username" type="text">
+		</div>
 
-  </head>
-  <body>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input class="form-control" name="email" id="email" type="text">
+		</div>
 
-<span style="background-color:red;">
-  <div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->
-      <div class="row"><!-- row class is used for grid system in Bootstrap-->
-          <div class="col-md-4 col-md-offset-4"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
-              <div class="login-panel panel panel-success">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Registration</h3>
-                  </div>
-                  <div class="panel-body">
+        <div class="form-group">
+			<label for="password">Password:</label>
+			<input class="form-control" name="password" id="password" type="password">
+		</div>
 
-                  <?php
-                  $error_msg=$this->session->flashdata('error_msg');
-                  if($error_msg){
-                    echo $error_msg;
-                  }
-                   ?>
+        <div class="form-group">
+			<label for="password">Confirm Password:</label>
+			<input class="form-control" name="password2" id="password" type="password">
+		</div>
 
-                      <form role="form" method="post" action="<?php echo base_url('user/register_user'); ?>">
-                          <fieldset>
-                              <div class="form-group">
-                                  <input class="form-control" placeholder="Name" name="user_name" type="text" autofocus>
-                              </div>
+        <div class="form-group">
+			<label for="gender">Gender:</label>
+			<select class="form-control" name="gender" id="gender">
+			  <option value="Male">Male</option>
+			  <option value="Female">Female</option>
+			  <option value="Other">Other</option>
+			</select>
+		</div>
 
-                              <div class="form-group">
-                                  <input class="form-control" placeholder="E-mail" name="user_email" type="email" autofocus>
-                              </div>
-                              <div class="form-group">
-                                  <input class="form-control" placeholder="Password" name="user_password" type="password" value="">
-                              </div>
+        <div class="form-group">
+			<label for="phone">Phone:</label>
+			<input class="form-control" name="phone" id="phone" type="text">
+		</div>
 
-                              <div class="form-group">
-                                  <input class="form-control" placeholder="Age" name="user_age" type="number" value="">
-                              </div>
-
-                              <div class="form-group">
-                                  <input class="form-control" placeholder="Mobile No" name="user_mobile" type="number" value="">
-                              </div>
-
-                              <input class="btn btn-lg btn-success btn-block" type="submit" value="Register" name="register" >
-
-                          </fieldset>
-                      </form>
-                      <center><b>Already registered ?</b> <br></b><a href="<?php echo base_url('user/login_view'); ?>">Login here</a></center><!--for centered text-->
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-
-
-
-</span>
+        <div>
+	        <button class="btn-btn-primary" name="register">Register</button>
+        </div>
+    </form>
+    </div>
 
 
-
-
-  </body>
+<srcipt src="<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.j.s"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+</body>
 </html>
