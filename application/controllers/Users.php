@@ -8,12 +8,13 @@ class Users extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('users_model');
   	 	$this->load->model('user_model');
+  	 	
         $this->load->library('session');
 	}
 
 	public function index(){
 		$data['users'] = $this->users_model->getAllUsers();
-		$this->load->view('home_page.php', $data);
+		$this->load->view('user_list.php', $data);
 	}
 
     public function register_user(){
