@@ -73,7 +73,7 @@ function login_user(){
         $this->session->set_userdata('user_age',$data['user_age']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
 
-        $this->load->view('user_list.php');
+        $this->load->view('users');
 
       }
       else{
@@ -87,7 +87,7 @@ function login_user(){
 
 function user_profile(){
 
-$this->load->view('user_list.php');
+$this->load->view('users');
 
 }
 public function user_logout(){
